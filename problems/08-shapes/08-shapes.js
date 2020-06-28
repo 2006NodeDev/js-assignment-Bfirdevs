@@ -42,18 +42,19 @@ function printShape(shape, height, character) {
       // only work on diamond later on 
       case 'Diamond': {
         
-        for(let i=0; i<height/2; i++){
-          singleLine += " ";
+        for( let i = 0; i<=height/2; i++){
+            singleLine += ' ';
         }
-        console.log(singleLine)
-        for(let i =height/2; i<=0; i--){
-          singleLine -=character; 
+        for(let i = 1; i<=height; i++){
+            singleLine = singleLine.replace(' ', '') // check for the string method to remove character
+            singleLine += character ;
             console.log(singleLine)
+        }        
+            
         }
-          break;
       } 
     }
-}
+
 printShape('Square', 5, '&');
 printShape('Triangle', 4, '*');
-printShape('Diamond', 7, '#');
+printShape('Diamond', 5, '#');
